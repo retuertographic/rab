@@ -92,6 +92,8 @@
     ].filter(function (l, i, arr) { return l !== "" || arr[i - 1] !== ""; });
     var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
     var status = document.getElementById("form-status");
+    var link = document.getElementById("wa-link");
+    if (link) link.href = url;
     if (status) status.classList.add("is-visible");
     window.open(url, "_blank", "noopener");
   });

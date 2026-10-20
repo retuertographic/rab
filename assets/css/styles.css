@@ -800,3 +800,4 @@ table.report { width: 100%; border-collapse: collapse; font-size: 0.97rem; min-w
 .logo-card img { width: 100%; height: auto; }
 .brand b { color: var(--red); font-weight: 900; }
 .site-footer .brand b { color: var(--red-bright); }
+.form-status a { color: var(--white); font-weight: 700; }
