@@ -45,16 +45,14 @@ El flujo `.github/workflows/pages.yml` publica la web en cada push a la rama pre
 
 GitHub Pages es gratis en repositorios públicos; en uno privado hace falta un plan de pago (GitHub Pro, Team o Enterprise).
 
-### Subdominio propio (por ejemplo `web.rabelectric.es`)
+### Subdominio: `rabelectric.retuertographicdesign.com`
 
-Con la publicación por GitHub Actions el dominio se configura en GitHub, no con un archivo `CNAME`.
+El DNS de `retuertographicdesign.com` está en SiteGround. Con la publicación por GitHub Actions el dominio se configura en GitHub, no con un archivo `CNAME`.
 
-1. Recomendado: verifica el dominio en **tu perfil → Settings → Pages → Add a domain**. Añade el registro `TXT` que te indique GitHub en el DNS y pulsa **Verify**. Así nadie más puede usar tu dominio en GitHub Pages.
-2. En el proveedor del dominio, crea un registro `CNAME`:
-   - Nombre/host: `web` (solo la parte del subdominio)
-   - Valor/destino: `retuertographic.github.io` (sin `/rab`)
-3. En **Settings → Pages** del repositorio, escribe `web.rabelectric.es` en **Custom domain** y pulsa **Save**.
-4. Cuando GitHub emita el certificado (de minutos a unas horas), activa **Enforce HTTPS**.
+1. Verifica el dominio en **tu perfil de GitHub → Settings → Pages → Add a domain** (`retuertographicdesign.com`), añadiendo en SiteGround el registro `TXT` que indique GitHub.
+2. En SiteGround (**Site Tools → Dominio → Editor de zona DNS**), crea un registro `CNAME`: nombre `rabelectric`, apunta a `retuertographic.github.io`.
+3. En **Settings → Pages** del repositorio, escribe `rabelectric.retuertographicdesign.com` en **Custom domain** y pulsa **Save**.
+4. Cuando GitHub emita el certificado, activa **Enforce HTTPS**.
 
 ## Pendientes a confirmar con el cliente
 
