@@ -35,6 +35,24 @@ python3 -m http.server 8000
 
 No requiere build ni dependencias.
 
+## Publicar en GitHub Pages
+
+El flujo `.github/workflows/pages.yml` publica la web en cada push a la rama predeterminada del repositorio. Solo copia los `.html`, `assets/` y, si existe, `CNAME`.
+
+1. En GitHub, ve a **Settings → Pages** y, en **Build and deployment → Source**, elige **GitHub Actions**.
+2. Ve a **Actions → Publicar en GitHub Pages → Run workflow** (o haz cualquier push a la rama predeterminada).
+3. Cuando termine, la web estará en `https://retuertographic.github.io/rab/`.
+
+GitHub Pages es gratis en repositorios públicos; en uno privado hace falta un plan de pago (GitHub Pro, Team o Enterprise).
+
+### Dominio propio (por ejemplo `rabelectric.es`)
+
+1. Crea en la raíz un archivo `CNAME` con el dominio en una sola línea: `rabelectric.es`.
+2. En el proveedor del dominio, añade estos registros DNS:
+   - `A` para `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
+   - `CNAME` para `www` → `retuertographic.github.io`
+3. En **Settings → Pages**, escribe el dominio en **Custom domain** y activa **Enforce HTTPS** cuando GitHub lo permita.
+
 ## Pendientes a confirmar con el cliente
 
 Los datos sin confirmar aparecen en la web subrayados con línea discontinua (clase `.tbd`).
