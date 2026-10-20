@@ -37,7 +37,7 @@ No requiere build ni dependencias.
 
 ## Publicar en GitHub Pages
 
-El flujo `.github/workflows/pages.yml` publica la web en cada push a la rama predeterminada del repositorio. Solo copia los `.html`, `assets/` y, si existe, `CNAME`.
+El flujo `.github/workflows/pages.yml` publica la web en cada push a la rama predeterminada del repositorio. Solo copia los `.html` y `assets/`.
 
 1. En GitHub, ve a **Settings → Pages** y, en **Build and deployment → Source**, elige **GitHub Actions**.
 2. Ve a **Actions → Publicar en GitHub Pages → Run workflow** (o haz cualquier push a la rama predeterminada).
@@ -45,13 +45,16 @@ El flujo `.github/workflows/pages.yml` publica la web en cada push a la rama pre
 
 GitHub Pages es gratis en repositorios públicos; en uno privado hace falta un plan de pago (GitHub Pro, Team o Enterprise).
 
-### Dominio propio (por ejemplo `rabelectric.es`)
+### Subdominio propio (por ejemplo `web.rabelectric.es`)
 
-1. Crea en la raíz un archivo `CNAME` con el dominio en una sola línea: `rabelectric.es`.
-2. En el proveedor del dominio, añade estos registros DNS:
-   - `A` para `@` → `185.199.108.153`, `185.199.109.153`, `185.199.110.153`, `185.199.111.153`
-   - `CNAME` para `www` → `retuertographic.github.io`
-3. En **Settings → Pages**, escribe el dominio en **Custom domain** y activa **Enforce HTTPS** cuando GitHub lo permita.
+Con la publicación por GitHub Actions el dominio se configura en GitHub, no con un archivo `CNAME`.
+
+1. Recomendado: verifica el dominio en **tu perfil → Settings → Pages → Add a domain**. Añade el registro `TXT` que te indique GitHub en el DNS y pulsa **Verify**. Así nadie más puede usar tu dominio en GitHub Pages.
+2. En el proveedor del dominio, crea un registro `CNAME`:
+   - Nombre/host: `web` (solo la parte del subdominio)
+   - Valor/destino: `retuertographic.github.io` (sin `/rab`)
+3. En **Settings → Pages** del repositorio, escribe `web.rabelectric.es` en **Custom domain** y pulsa **Save**.
+4. Cuando GitHub emita el certificado (de minutos a unas horas), activa **Enforce HTTPS**.
 
 ## Pendientes a confirmar con el cliente
 
